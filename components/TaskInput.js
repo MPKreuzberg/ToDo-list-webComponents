@@ -16,22 +16,28 @@ class TaskInput extends HTMLElement {
   `;
   }
 
-  connectedCallback(){
-    this.shadowRoot.querySelector('button').addEventListener('click', () => {
-        const input = this.shadowRoot.querySelector('input');
-        const task = input.value.trim();
-        if(task){
-            this.dispatchEvent(new CustomEvent('add-task',  {
-                detail: {task},
-                bubbles: true,
-                composed:  true
-            }));
-            input.value = '';
-        }
+  connectedCallback() {
+    this.shadowRoot.querySelector("button").addEventListener("click", () => {
+      const input = this.shadowRoot.querySelector("input");
+      const task = input.value.trim();
+      if (task) {
+        console.log("Event emmited:", task);
+
+        this.dispatchEvent(
+          new CustomEvent("add-task", {
+            detail: { task },
+            bubbles: true,
+            composed: true,
+          })
+        );
+        input.value = "";
+      }
     });
   }
 
-  disconnectedCallBack(){
-    this.shadowRoot.querySelector('button').removeEventListener('click')
+  disconnectedCallBack() {
+    this.shadowRoot.querySelector("button").removeEventListener("click");
   }
 }
+
+customElements.define("task-input", TaskInput);
