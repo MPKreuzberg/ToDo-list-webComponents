@@ -1,0 +1,26 @@
+.table-header {
+    display: flex;
+    background-color: #f4f4f4;
+    border-bottom: 2px solid #ddd;
+    font-weight: bold;
+}
+
+.header-cell {
+    flex: 1;
+    padding: 10px;
+    text-align: left; 
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s;
+}
+
+.header-cell:hover {
+    background-color: #e0e0e0;
+}
+
+.header-cell.sorted {
+    color: #007BFF;
+    font-weight: bold;
+}
+
+

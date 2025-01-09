@@ -1,0 +1,27 @@
+.table-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.cell {
+    flex: 1;
+    padding: 10px;
+    text-align: left; 
+}
+
+.row:nth-child(even) {
+    background-color: #cecece;
+}
+
+.row:hover {
+    background-color: #ffffff;
+}
