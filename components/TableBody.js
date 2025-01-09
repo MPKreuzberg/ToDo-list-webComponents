@@ -11,6 +11,7 @@ class TableBody extends HTMLElement {
 `;
   }
   setData(data) {
+    console.log("Data recieved:", data); 
     const bodyDiv = this.shadowRoot.querySelector(".table-body");
     bodyDiv.innerHTML = "";
 

@@ -59,12 +59,15 @@ class TableWrapper extends HTMLElement {
           return;
       }
 
-      header.setColumns(
-          this.state.columns,
-          this.state.sortColumn,
-          this.state.sortDirection
-      );
-      body.setData(this.state.data);
+      const filteredData = this.state.data.map(row => {
+        const filteredRow = {};
+        this.state.columns.forEach(column => {
+            filteredRow[column] = row[column];
+        });
+        return filteredRow;
+    });
+    header.setColumns(this.state.columns, this.state.sortColumn, this.state.sortDirection);
+    body.setData(filteredData);
   }
 }
 
