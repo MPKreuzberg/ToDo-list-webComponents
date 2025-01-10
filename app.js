@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  fetch("./data/data_10.json")
+  fetch("./data/data_150.json")
     .then((response) => response.json())
     .then((data) => {
       console.log("JSON data:", data);
